@@ -1,0 +1,71 @@
+body {
+  background-image: url("./images/iron-man-wallpaper.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  margin: 0;
+  height: 100vh;
+}
+
+h1 {
+  display: flex;
+  justify-content: center;
+  color: white;
+}
+
+article {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+h2 {
+  color: white;
+}
+
+p {
+  width: 50%;
+  color: white;
+}
+
+figure {
+  display: flex;
+  justify-content: center;
+}
+
+.reactor-img {
+  width: 20%;
+  height: 20%;
+}
+
+.ironman-img {
+  width: 20%;
+  height: 20%;
+  display: none;
+}
+
+.reactor-img:hover {
+  display: none;
+}
+
+.reactor-img:hover + .ironman-img {
+  display: inline-block;
+}
+
+footer {
+  width: 100vw;
+  bottom: 0;
+  position: fixed;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+.marvel-link {
+  text-decoration: none;
+  color: white;
+}
+
+.copyright {
+  width: fit-content;
+}
