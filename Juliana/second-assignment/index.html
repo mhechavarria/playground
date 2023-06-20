@@ -11,7 +11,9 @@
 </head>
 <body>
     <header>
-        <nav>
+        <button id="open" class="open-menu"><i class="fa fa-bars"></i></button>
+        <nav id="nav" class="nav">
+            <button id="close" class="close-menu"><i class="fa fa-times"></i></button>
             <ul class="nav-links">
                 <li><a href="#">HOME</a></li>
                 <li><a href="#">MOVIES</a></li>
@@ -22,6 +24,7 @@
     </header>
     <main>
         <section id="intro">
+            <img id="bg-img" src="./assets/spidermanBanner.jpg" alt="Spider-Man background image">
             <div>
                 <h1>SPIDER-MAN</h1>
                 <p>In this website you will find information about the most popular Marvel superhero. Take a look for all Spider-Man's movies and comics, and after that go to our Market place and shop whatever you want!</p>
@@ -29,7 +32,7 @@
             </div>            
         </section>
     </main>
-    <footer>
+    <footer id="footer">
         <div class="footer-content">
             <h2>FOLLOW MARVEL</h2>
             <ul class="socials">
@@ -48,5 +51,6 @@
             </ul>
         </div>
     </footer>
+    <script src="./script.js"></script>
 </body>
 </html>
