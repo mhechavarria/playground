@@ -52,7 +52,11 @@ function showHeroes(arr, container){
 };
 
 function sortHeroes(){
-    const sortHeroes = (x,y) => x.modified.localeCompare(y.modified);
+    const sortHeroes = (x,y) => {
+        const dateX = new Date(x.modified);
+        const dateY = new Date(y.modified);
+        return dateX.getTime() - dateY.getTime();
+    }
     arrSortedHeroes = arrHeroes.sort(sortHeroes);
     return arrSortedHeroes;
 }
