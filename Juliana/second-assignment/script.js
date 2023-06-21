@@ -24,7 +24,7 @@ loadSortedHeroesBtn.addEventListener('click', () => {
 });
 
 function showData(){
-    const url = './marvel.json';
+    const url = '../../mock/marvel.json';
     fetch(url)
         .then(res => res.json())    
         .then((info) => { 
