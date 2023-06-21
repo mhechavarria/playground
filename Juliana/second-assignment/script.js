@@ -11,102 +11,54 @@ open.addEventListener("click", () => nav.classList.add("visible"));
 close.addEventListener("click", () => nav.classList.remove("visible"));
 
 loadHeroesBtn.addEventListener('click', () => {
-    undoReplaceHeroes();
+    replaceContainer(sortedHeroesContainer, heroesContainer);
     document.querySelector('#loadHeroes').style.display = 'none';
     document.querySelector('#loadSortedHeroes').style.display = 'flex';    
 });
-
 loadSortedHeroesBtn.addEventListener('click', () => {
-    replaceHeroes();
+    replaceContainer(heroesContainer, sortedHeroesContainer);
+    sortHeroes();
+    showHeroes(arrSortedHeroes, sortedHeroesContainer);
     document.querySelector('#loadHeroes').style.display = 'flex';
     document.querySelector('#loadSortedHeroes').style.display = 'none';
 });
 
-function showHeroes(){
-    arrHeroes.forEach((item)=>{
-    let heroesList = document.createElement('div');
-    let heroeName = document.createElement('h2');
-    let heroeRelease = document.createElement('p');
-    let heroeLink = document.createElement('a');
+function showData(){
+    const url = './marvel.json';
+    fetch(url)
+        .then(res => res.json())    
+        .then((info) => { 
+            arrHeroes = info.data.results;
+            showHeroes(arrHeroes, heroesContainer);       
+        })
+    .catch((error) => console.log(error));
+};
 
-    const dateStr = item.modified,        
-    [yyyy,mm,dd] = dateStr.split(/[/:\-T]/)
-    const date = `${dd}-${mm}-${yyyy}`;
-    
-    heroeName.textContent = item.name;
-    heroeRelease.textContent = `Release: ${date}`;
-    heroeLink.href = item.urls[0].url;
-    heroeLink.target = "_blank";
-    heroeLink.textContent = "Read more";
-     
-    heroesList.appendChild(heroeName);
-    heroesList.appendChild(heroeRelease);
-    heroesList.appendChild(heroeLink);
+function showHeroes(arr, container){
+    let html = '';
+    arr.map((item)=>{
+        const dateStr = new Date(item.modified);
+        const date = `${dateStr.getMonth()}-${dateStr.getDay()}-${dateStr.getFullYear()}`;
 
-    heroesContainer.appendChild(heroesList);        
-})
-}
-
-function showSortedHeroes(){
-    arrHeroes.forEach((item)=>{
-    let heroesList = document.createElement('div');
-    let heroeName = document.createElement('h2');
-    let heroeRelease = document.createElement('p');
-    let heroeLink = document.createElement('a');
-
-    const dateStr = item.modified,        
-    [yyyy,mm,dd] = dateStr.split(/[/:\-T]/)
-    const date = `${dd}-${mm}-${yyyy}`;
-
-    heroeName.textContent = item.name;
-    heroeRelease.textContent = `Release: ${date}`;
-    heroeLink.href = item.urls[0].url;
-    heroeLink.target = "_blank";
-    heroeLink.textContent = "Read more";
-
-    heroesList.appendChild(heroeName);
-    heroesList.appendChild(heroeRelease);
-    heroesList.appendChild(heroeLink);
-
-    sortedHeroesContainer.appendChild(heroesList);        
-})
-}
-
-function replaceHeroes(){
-    heroesContainer.replaceWith(sortedHeroesContainer);
-    showSortedData();
-}
-
-function undoReplaceHeroes(){
-    sortedHeroesContainer.replaceWith(heroesContainer);
-    showData();
-}
+        html += `
+            <div>
+                <h2>${item.name}</h2>
+                <p>Release: ${date}</p>
+                <a href="${item.urls[0].url}" target="_blank">Read more</a>
+            </div>
+        `;
+    });
+    container.innerHTML = html;
+};
 
 function sortHeroes(){
     const sortHeroes = (x,y) => x.modified.localeCompare(y.modified);
-    arrHeroes = arrHeroes.sort(sortHeroes);
-    return arrHeroes;
+    arrSortedHeroes = arrHeroes.sort(sortHeroes);
+    return arrSortedHeroes;
 }
 
-function showData(){
-    fetch('./marvel.json')
-    .then(res => res.json())    
-    .then((info) => { 
-        arrHeroes = info.data.results;
-        showHeroes();       
-    })
-    .catch((error) => console.log(error));
-}
-
-function showSortedData(){
-    fetch('./marvel.json')
-    .then(res => res.json())    
-    .then((info) => { 
-        arrHeroes = info.data.results;
-        sortHeroes()
-        showSortedHeroes();       
-    })
-    .catch((error) => console.log(error));
+function replaceContainer(initialContainer, newContainer){
+    initialContainer.replaceWith(newContainer);
 }
 
 showData();
