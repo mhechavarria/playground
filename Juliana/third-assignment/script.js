@@ -69,7 +69,7 @@ function replaceContainer(initialContainer, newContainer){
 }
 
 function obtainData(){
-    const url = 'http://gateway.marvel.com/v1/public/comics?apikey=98568e0c930b1dbdd23f9a378aa2346d&ts=1686853070439&hash=71ac28624e0241f49ab582bbec8dd4b1';
+    const url = '';
     fetch(url)
         .then(res => res.json())    
         .then((info) => { 
