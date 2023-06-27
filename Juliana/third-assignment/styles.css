@@ -265,6 +265,47 @@ header{
         font-size: 1rem;
         transition: .1s;
     }
+#comics{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 2rem;
+}
+    #comics h2{
+        color: #0A0A0A;                     
+        text-shadow: 0 0 .2rem #A71E34;        
+        font-weight: 500;                   
+        font-size: 1.8rem;                  
+        word-spacing: .2rem;
+    }
+#comics-list{
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    margin-top: 2rem;
+}
+    #comics-list .title-container h2{
+        font-size: .9rem;
+        font-weight: 400;
+        text-align: center;
+        padding-top: .5rem;
+        text-transform: uppercase;
+    }
+    #comics-list div{
+        padding: 0 .2rem;
+        width: 9.5rem;
+        height: 50vh;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: flex-start;
+    }
+.image-container img{
+    filter: drop-shadow(8px 8px 5px rgba(0, 0, 0, 0.7));
+    width: 100%;
+    height: 34vh;
+    position: relative;    
+}
 #footer{
     position: relative;
     bottom: 0;
