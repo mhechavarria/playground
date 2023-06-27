@@ -5,8 +5,11 @@ const loadHeroesBtn = document.querySelector('#loadHeroes');
 const loadSortedHeroesBtn = document.querySelector('#loadSortedHeroes');
 const heroesContainer = document.getElementById('heroes-list');
 const sortedHeroesContainer = document.getElementById('sorted-heroes-list');
+const comicsContainer = document.getElementById('comics-list');
 let arrHeroes = [];
+let arrComics = [];
 
+document.addEventListener('DOMContentLoaded', obtainData);
 open.addEventListener("click", () => nav.classList.add("visible"));
 close.addEventListener("click", () => nav.classList.remove("visible"));
 
@@ -64,5 +67,33 @@ function sortHeroes(){
 function replaceContainer(initialContainer, newContainer){
     initialContainer.replaceWith(newContainer);
 }
+
+function obtainData(){
+    const url = 'http://gateway.marvel.com/v1/public/comics?apikey=98568e0c930b1dbdd23f9a378aa2346d&ts=1686853070439&hash=71ac28624e0241f49ab582bbec8dd4b1';
+    fetch(url)
+        .then(res => res.json())    
+        .then((info) => { 
+            arrComics = info.data.results;
+            showComics(arrComics, comicsContainer);     
+    })
+    .catch((error) => console.log(error));
+}
+
+function showComics(arr, container){
+    let html = '';
+    arr.map((item)=>{
+        html += `
+            <div>
+                <div class="image-container">
+                    <img src="${item.thumbnail["path"] + "." + item.thumbnail["extension"]}" alt="${item.title} image"></img>
+                </div>
+                <div class="title-container">
+                    <h2>${item.title}</h2>
+                </div>
+            </div>           
+        `;
+    });
+    container.innerHTML = html;
+};
 
 showData();
