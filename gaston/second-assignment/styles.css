@@ -1,0 +1,39 @@
+body {
+  width: 100vw;
+}
+
+.title {
+  display: flex;
+  justify-content: center;
+  margin-top: 5vh;
+  margin-bottom: 5vh;
+}
+
+section {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+}
+
+.heroContainer {
+  width: 550px;
+  height: 550px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border: 1px solid black;
+}
+
+img {
+  width: 200px;
+  height: 200px;
+}
+
+.heroDescription {
+  width: 500px;
+  height: 60px;
+  display: flex;
+  justify-content: center;
+  text-align: center;
+}
