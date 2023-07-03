@@ -1,0 +1,222 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+  list-style: none;
+}
+
+html {
+  font-size: 62.5%;
+}
+body {
+  height: 100vh;
+  color: white;
+  font-family: "Montserrat", sans-serif;
+}
+
+.containerWeb {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-areas:
+    "header header" 
+    "nav nav"
+    "main main"
+    "footer footer";
+  font-size: 3rem;
+  position: relative;
+}
+
+header {
+  background-color: #000000d7;
+  grid-area: header;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.button-bars{
+  background-color: transparent;
+  color: white;
+  border: none;
+  padding-left: 1em;
+}
+
+ .fa-bars {
+  font-size: 2.6rem;
+}
+
+nav{
+  display: none;
+}
+
+#nav.open{
+  background-color: black;
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  z-index: 9999;
+  padding: .4em 0 0 .7em;
+}
+
+#button-off{
+  background-color: transparent;
+  color: white;
+  border: none;
+  padding-left: 1em;
+}
+
+.fa-xmark{
+  font-size: 2.6rem;
+}
+
+nav ul li{
+  display: flex;
+  flex-direction: column;
+  line-height: 40px;
+  margin-top: .6em;
+}
+
+nav ul li a{
+  color: white;
+  font-size: 2rem;
+  font-weight: bold;
+  text-transform: uppercase;
+    
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.aLogo {
+  height: 7vh;
+  width: 34vw;
+}
+
+.imgLogo {
+  width: 34vw;
+}
+
+.iconSearch {
+  font-size: 1.8rem;
+  color: white;
+  padding-right: 1em;
+}
+
+.main-mobile {
+  background-color: rgba(0, 0, 0, 0.937);
+  grid-area: main;
+}
+
+.section-heroes {
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 0.2em;
+  justify-content: center;
+}
+
+.section-article {
+  display: flex;
+  position: relative;
+  flex-direction: column;
+}
+
+.text-with-button {
+  display: flex;
+  flex-direction: column;
+  padding: 0.8em;
+  justify-items: center;
+}
+
+.h2-heroes {
+  font-size: 3.5rem;
+  font-weight: 500;
+  font-style: italic;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  line-height: 1.2;
+}
+
+.span-marvel {
+  font-weight: 700;
+  font-style: italic;
+}
+
+.p-texto {
+  font-size: 1.5rem;
+  font-weight: 400;
+  line-height: 1.5;
+}
+
+.container-button {
+  margin: 0.5em 0 2em 0;
+}
+
+.button-seeMore {
+  border: 0;
+  background-color: red;
+  color: white;
+  height: 5vh;
+  width: 40vw;
+  border-radius: 1.2em;
+  letter-spacing: 0.3em;
+}
+
+.figure-img {
+  height: 20vh;
+  margin-top: .4em;
+  height: 27vh;
+}
+
+figcaption {
+  padding: 0.4em;
+  background-color: rgba(0, 0, 0, 0.937);
+}
+
+figcaption h2 {
+  font-size: 3rem;
+  font-weight: 600;
+  font-style: italic;
+}
+
+figcaption p {
+  font-size: 1.5rem;
+  font-weight: 400;
+}
+
+footer {
+  background-color: #000000d7;
+  grid-area: footer;
+}
+
+@media screen and (min-width: 768px) {
+  .containerWeb {
+    display: grid;
+    grid-template-columns: 0.2fr 1fr 1fr 0.2fr;
+    grid-template-areas:
+      ". header header ."
+      ". nav nav ."
+      " . main main ."
+      ". footer footer .";
+    font-size: 5rem;
+  }
+}
