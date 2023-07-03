@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Marvel</title>
+    <link rel="stylesheet" href="./styles.css" />
+    <script
+      src="https://kit.fontawesome.com/d04d0856fd.js"
+      crossorigin="anonymous"
+    ></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,300;0,400;0,500;0,600;0,700;1,100;1,300;1,400&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div class="containerWeb">
+      <header> 
+        <button class="button-bars" id="button-on">
+        <span><i class="fa-solid fa-bars"></i></span>
+        </button>
+        <nav id="nav">
+          <button id="button-off"><span><i class="fa-solid fa-xmark"></i></span></button>
+          <ul>
+            <li>
+              <a href="">NEWS</a>
+              <a href="">CHARACTERS</a>
+              <a href="">SERIES</a>
+              <a href="">COMICS</a>
+              <a href="">CREATORS</a>
+              <a href="">STORIES</a>
+            </li>
+          </ul>
+        </nav>       
+        <a href="index.html" class="aLogo"
+          ><img src="../public/images/logo.png" alt="logo" class="imgLogo"
+        /></a>
+        <div class="header-search">
+          <a href="#"
+            ><span class="iconSearch">
+              <i class="fa-solid fa-magnifying-glass"></i> </span
+          ></a>
+        </div>
+      </header>
+      <main class="main-mobile">
+        <section class="section-heroes">
+          <article class="section-article">
+            <img
+              src="/public/images/bglandingpage.jpg"
+              alt="Heroes"
+              class="figure-img"
+            />
+            <div class="text-with-button">
+              <h2 class="h2-heroes">
+                Explore <span class="span-marvel">Marvel</span> Characters
+              </h2>
+              <p class="p-texto">
+                Welcome to the Marvel Universe, a captivating realm where
+                extraordinary characters come to life! Explore a vast tapestry
+                of heroes and villains, each possessing unique abilities,
+                captivating backstories, and epic adventures.
+              </p>
+              <div class="container-button" id="buttonSeeMore">
+                <button class="button-seeMore" onclick="location.href='./characters.html'">SEE MORE</button>
+              </div>
+            </div>
+          </article>
+          <article class="section-article">
+            <figure>
+              <img
+                src="/public/images/spider1jpg.jpg"
+                alt="spiderman"
+                class="figure-img"
+              />
+              <figcaption>
+                <h2>Spider Man</h2>
+                <p>Texto de heroe</p>
+              </figcaption>
+            </figure>
+          </article>
+          <article class="section-article">
+            <figure>
+              <img
+                src="../public/images/hulk1jpg.jpg"
+                alt="Hulk"
+                class="figure-img"
+              />
+              <figcaption>
+                <h2>Hulk</h2>
+                <p>Texto de heroe</p>
+              </figcaption>
+            </figure>
+          </article>
+        </section>
+      </main>
+      <footer>Footer</footer>
+    </div>
+    <script src="./script.js"></script>
+  </body>
+</html>
