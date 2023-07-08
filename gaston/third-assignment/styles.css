@@ -1,0 +1,115 @@
+body {
+    background-color: grey;
+    margin: 0;
+}
+
+nav {
+    width: 100vw;
+    height: 5vh;
+    position: fixed;
+    top: 0;
+    background-color: rebeccapurple;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    
+}
+
+ul {
+    margin: 0;
+    display: flex;
+    justify-content: space-around;
+}
+
+li {
+    list-style: none;
+    font-size: 25px;
+}
+
+a {
+    text-decoration: none;
+    color: aliceblue;
+}
+
+.imgContainer {
+    display: flex;
+    justify-content: center;
+    margin-top: 15vh;
+}
+
+.homeImg {
+    width: 250px;
+    height: 350px;
+}
+
+
+/* Heroes */
+
+#heroesContainer {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 2vw;
+}
+
+.heroCard {
+    display: flex;
+    flex-direction: column;
+    width: 250px;
+    height: 350px;
+    justify-content: center;
+    align-items: center;
+    border-radius: 20px;
+    border: 2px solid black;
+    justify-content: center;
+    align-items: center;
+}
+
+.heroesImg {
+    width: 150px;
+    height: 150px;
+    border-radius: 25px;
+}
+
+.heroDescription {
+    width: 450px;
+    text-align: center;
+}
+
+/* Comics */
+
+#comicsContainer {
+    margin-top: 5vh;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 2vw;
+}
+
+.comicCard {
+    display: flex;
+    flex-direction: column;
+    width: 500px;
+    height: 400px;
+    justify-content: center;
+    align-items: center;
+    border-radius: 20px;
+    border: 2px solid black;
+    justify-content: center;
+    align-items: center;
+}
+
+.cardTitle {
+    text-align: center;
+}
+
+.comicImg {
+    width: 200px;
+    height: 200px;
+    border-radius: 25px;
+}
+
+.comicDescription {
+    width: 450px;
+    text-align: center;
+}
