@@ -1,12 +1,11 @@
 let arrHeroes = [];
 
 function getData() {
-  const url = "/marvel.json";
+  const url = "../../mock/marvel.json";
   fetch(url)
     .then((res) => res.json())
     .then((res) => {
       arrHeroes = res.data.results;
-      console.log(arrHeroes);
       const sortedHeroes = arrHeroes.sort(
         (a, b) => new Date(b.modified) - new Date(a.modified)
       );
@@ -25,7 +24,7 @@ function renderItems(arrHeroes) {
         <h2>${item.name}</h2>
         <p class="heroDescription">${item.description? item.description : "No information found"}</p>
         <p>${item.modified}</p>
-        <img src=${item.thumbnail.path + ".jpg"} alt="Hero Image not found">
+        <img src=${item.thumbnail.path + ".jpg"} alt="Hero Image">
         `;
     container.appendChild(itemElement);
   });
